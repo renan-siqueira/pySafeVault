@@ -13,9 +13,9 @@ For more details, check [pySafeVault Wiki](https://github.com/renan-siqueira/pyS
 - [About](https://github.com/renan-siqueira/pySafeVault/wiki)
 - [Installation & Setup](https://github.com/renan-siqueira/pySafeVault/wiki/0.-Installation-&-Setup)
 - [Usage Guide](https://github.com/renan-siqueira/pySafeVault/wiki/1.-Usage-Guide)
-- [Tests]()
-- [Contribution and Community Guidelines]()
-- [License & Copyright]()
+- [Automated Testing Guide](https://github.com/renan-siqueira/pySafeVault/wiki/2.-Automated-Testing-Guide)
+- [Contribution and Community Guidelines](https://github.com/renan-siqueira/pySafeVault/wiki/Contribution-and-Community-Guidelines)
+- [License & Copyright](https://github.com/renan-siqueira/pySafeVault/wiki/License-and-Copyright)
 
 ---
 
@@ -33,21 +33,21 @@ For more details, check [pySafeVault Wiki](https://github.com/renan-siqueira/pyS
 
 For detailed instructions on how to clone the repository, set up a virtual environment, and install dependencies, check out our [Installation Guide](https://github.com/renan-siqueira/pySafeVault/wiki/0.-Installation-&-Setup) in the wiki.
 
-Basic Steps:
+### Basic Steps:
 
 1. Clone the repository: `https://github.com/renan-siqueira/pySafeVault.git`
 
-1. Navigate to the project directory: `cd pySafeVault`
+2. Navigate to the project directory: `cd pySafeVault`
 
-1. Create a virtual environment: `python -m venv venv`
+3. Create a virtual environment: `python -m venv venv`
 
-1. Activate the virtual environment:
+4. Activate the virtual environment:
 
-- On Windows: ``.\venv\Scripts\activate`
+    - On Windows: ``.\venv\Scripts\activate`
 
-- On macOS and Linux: `source venv/bin/activate`
+    - On macOS and Linux: `source venv/bin/activate`
 
-1. Install the required packages: `pip install -r requirements.txt`
+5. Install the required packages: `pip install -r requirements.txt`
 
 ---
 
@@ -75,7 +75,7 @@ To run the tests:
 pytest
 ```
 
-More about our testing methodology can be found in our [Testing Wiki Page](https://github.com/renan-siqueira/pySafeVault/wiki/2.-Automated-Testing-Guide).
+More about our testing methodology can be found in our [Automated Testing Guide Wiki Page](https://github.com/renan-siqueira/pySafeVault/wiki/2.-Automated-Testing-Guide).
 
 ---
 
