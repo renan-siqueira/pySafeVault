@@ -6,12 +6,10 @@ from cryptography.hazmat.primitives import padding as c_padding
 
 
 def decrypt_data(encrypted_data, password):
-    # Extract the salt and iv from the beginning of the data
     salt = encrypted_data[:16]
     iv = encrypted_data[16:32]
     actual_encrypted_data = encrypted_data[32:]
 
-    # Derive the key again
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=32,
@@ -21,12 +19,10 @@ def decrypt_data(encrypted_data, password):
     )
     key = kdf.derive(password.encode())
 
-    # Decrypt the data
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     decryptor = cipher.decryptor()
     decrypted_padded_data = decryptor.update(actual_encrypted_data) + decryptor.finalize()
 
-    # Remove the padding
     unpadder = c_padding.PKCS7(128).unpadder()
     decrypted_data = unpadder.update(decrypted_padded_data) + unpadder.finalize()
 
