@@ -1,3 +1,9 @@
 .venv
 __pycache__
 .vscode
+
+*.jpg
+*.jpeg
+*.png
+*.zip
+*.enc
