@@ -5,7 +5,6 @@ import os
 import shutil
 from src import zipper
 
-# test
 
 def create_sample_files(base_path):
     """Creates some sample folders and files for testing."""
