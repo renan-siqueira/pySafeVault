@@ -21,7 +21,10 @@ def encrypt_data(data, password):
     iv = os.urandom(16)
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     encryptor = cipher.encryptor()
-    ctx = c_padding.PKCS7(128).padder().update(data) + c_padding.PKCS7(128).padder().finalize()
-    encrypted_data = encryptor.update(ctx) + encryptor.finalize()
+
+    padder = c_padding.PKCS7(128).padder()
+    padded_data = padder.update(data) + padder.finalize()
+
+    encrypted_data = encryptor.update(padded_data) + encryptor.finalize()
 
     return salt + iv + encrypted_data

@@ -12,12 +12,13 @@ def main():
         password = getpass("Enter the password for encryption (password will not be displayed): ")
 
         zip_data = zipper.zip_data(folder_path, folder_path + ".zip")
+        print(f"Size of zip data: {len(zip_data)} bytes")
+
         encrypted_data = encryptor.encrypt_data(zip_data, password)
 
         with open(output_filename, 'wb') as f:
             f.write(encrypted_data)
 
-        # Clean up by removing the temporary zip file
         os.remove(folder_path + ".zip")
         print("Data successfully encrypted!")
 
@@ -34,7 +35,6 @@ def main():
         zipper.unzip_data(decrypted_data, output_zip_path)
 
         print("Data successfully decrypted and extracted to:", output_folder_path)
-
     else:
         print("Invalid choice. Exiting.")
 
