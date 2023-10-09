@@ -1,6 +1,9 @@
+"""
+Tests for the zipper module.
+"""
 import os
-from src import zipper
 import shutil
+from src import zipper
 
 
 def create_sample_files(base_path):
@@ -17,11 +20,16 @@ def create_sample_files(base_path):
     for sub in subfolders:
         os.mkdir(os.path.join(base_path, sub))
         for i in range(3):  # Create 3 files in each subfolder
-            with open(os.path.join(base_path, sub, f"file{i}.txt"), "w") as f:
+            with open(os.path.join(base_path, sub, f"file{i}.txt"), "w", encoding='utf-8') as f:
                 f.write(f"This is content for {sub}/file{i}.txt")
 
 
 def test_zip_and_unzip():
+    """
+    Test the zipping and unzipping processes.
+    Create sample files, zip them, and then unzip.
+    The unzipped files should match the original.
+    """
     # Pre-test setup: Create test files and folders
     test_folder_name = "sample_test_folder"
     test_path = os.path.join("test_files", test_folder_name)

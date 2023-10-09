@@ -1,3 +1,7 @@
+"""
+Provides functionality to encrypt data.
+Uses the AES algorithm for encryption, along with PBKDF2 for key derivation.
+"""
 import os
 
 from cryptography.hazmat.primitives import hashes
@@ -8,6 +12,16 @@ from cryptography.hazmat.primitives import padding as c_padding
 
 
 def encrypt_data(data, password):
+    """
+    Encrypt the given data using the provided password.
+
+    Args:
+    - data (bytes): The data to encrypt.
+    - password (str): The password used for encryption.
+
+    Returns:
+    - bytes: The encrypted data combined with the salt and iv.
+    """
     salt = os.urandom(16)
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),

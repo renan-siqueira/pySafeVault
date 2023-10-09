@@ -1,9 +1,17 @@
+"""
+Provides a command-line interface for encrypting and decrypting folders/files.
+"""
 import os
 from getpass import getpass
 from src import encryptor, decryptor, zipper
 
 
 def main():
+    """
+    Command-line interface for the encryption and decryption of folders/files.
+    The user is prompted to choose between encrypting and decrypting. 
+    Based on the choice, the relevant processes are executed.
+    """
     choice = input("Would you like to (e)ncrypt or (d)ecrypt? ")
 
     if choice.lower() == 'e':
@@ -24,7 +32,9 @@ def main():
 
     elif choice.lower() == 'd':
         encrypted_file_path = input("Enter the path of the encrypted file you want to decrypt: ")
-        output_folder_path = input("Enter the path where the decrypted folder or file should be placed: ")
+        output_folder_path = input(
+            "Enter the path where the decrypted folder or file should be placed: "
+        )
         password = getpass("Enter the decryption password (password will not be displayed): ")
 
         with open(encrypted_file_path, 'rb') as f:
@@ -37,6 +47,7 @@ def main():
         print("Data successfully decrypted and extracted to:", output_folder_path)
     else:
         print("Invalid choice. Exiting.")
+
 
 if __name__ == "__main__":
     main()
