@@ -3,7 +3,7 @@ Tests for the decryptor module.
 """
 from src import encryptor, decryptor
 
-def test_decrypt_data():
+ef test_decrypt_data():
     """
     Test the decryption process by first encrypting a piece of data 
     and then decrypting it. The decrypted data should match the original.
